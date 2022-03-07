@@ -1,9 +1,9 @@
 {
-    "rds_host": "",
+    "rds_host": "sql5.freemysqlhosting.net",
     "rds_port": "3306",
-    "rds_user": "",
-    "rds_password" : "",
-    "rds_db": "",
+    "rds_user": "sql5477534",
+    "rds_password" : "bvUheBIk42",
+    "rds_db": "sql5477534",
     "server_host": "127.0.0.1",
-    "server_port":"8080"
+    "server_port": "8080"
 }
