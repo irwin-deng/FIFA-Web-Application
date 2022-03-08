@@ -1,7 +1,7 @@
 import config from './config.json'
 const base_url = (config.server_port == null) ?
-                 `http://${config.server_host}` :
-                 `http://${config.server_host}:${config.server_port}`
+                 `${config.server_host}` :
+                 `${config.server_host}:${config.server_port}`
 
 const getAllMatches = async (page, pagesize, league) => {
     var res = await fetch(`${base_url}/matches/${league}?page=${page}&pagesize=${pagesize}`, {
