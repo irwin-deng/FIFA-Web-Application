@@ -7,6 +7,49 @@ import {
 
 import MenuBar from '../components/MenuBar';
 import { getAllMatches, getAllPlayers } from '../fetcher'
+const { Column, ColumnGroup } = Table;
+const { Option } = Select;
+
+
+const playerColumns = [
+  {
+    title: 'Name',
+    dataIndex: 'Name',
+    key: 'Name',
+    sorter: (a, b) => a.Name.localeCompare(b.Name),
+    render: (text, row) => <a href={`/players?id=${row.PlayerId}`}>{text}</a>
+  },
+  {
+    title: 'Nationality',
+    dataIndex: 'Nationality',
+    key: 'Nationality',
+    sorter: (a, b) => a.Nationality.localeCompare(b.Nationality)
+  },
+  {
+    title: 'Rating',
+    dataIndex: 'Rating',
+    key: 'Rating',
+    sorter: (a, b) => a.Rating - b.Rating
+    
+  },
+  {
+    title: 'Potential',
+    dataIndex: 'Potential',
+    key: 'Potential',
+    sorter: (a, b) => a.Potential - b.Potential    
+  },
+  {
+    title: 'Club',
+    dataIndex: 'Club',
+    key: 'Club',
+    sorter: (a, b) => a.Club.localeCompare(b.Club)    
+  },
+  {
+    title: 'Value',
+    dataIndex: 'Value',
+    key: 'Value'
+  }
+];
 
 class HomePage extends React.Component {
 
@@ -25,25 +68,72 @@ class HomePage extends React.Component {
     this.goToMatch = this.goToMatch.bind(this)
   }
 
-
   goToMatch(matchId) {
     window.location = `/matches?id=${matchId}`
   }
 
   leagueOnChange(value) {
-	  
+    // calls getAllMatches in fetcher.js with the parameters page and pageSize set to null
+    getAllMatches(null, null, value).then(res => {
+      this.setState({ matchesResults: res.results })
+    })
+
   }
 
   componentDidMount() {
- 
-  }
+    getAllMatches(null, null, 'D1').then(res => {
+      this.setState({ matchesResults: res.results })
+    })
 
+    getAllPlayers().then(res => {
+      console.log(res.results)
+      this.setState({ playersResults: res.results})
+    })
+
+  }
 
   render() {
-	  
-  }
 
+    return (
+      <div>
+        <MenuBar />
+        <div style={{ width: '70vw', margin: '0 auto', marginTop: '5vh' }}>
+          <h3>Players</h3>
+          <Table dataSource={this.state.playersResults} columns={playerColumns} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}/>
+        </div>
+        <div style={{ width: '70vw', margin: '0 auto', marginTop: '2vh' }}>
+          <h3>Matches</h3>
+          {/* League selector */}
+          <Select defaultValue="D1" style={{ width: 120 }} onChange={this.leagueOnChange}>
+            <Option value="D1">Bundesliga</Option>
+            <Option value="SP1">La Liga</Option>
+            <Option value="F1">Lique 1</Option>
+            <Option value="I1">Serie A</Option>
+            <Option value="E0">Premier League</Option>
+          </Select>
+          
+          {/* Table to view match info */}
+          <Table onRow={(record, rowIndex) => {
+              return {
+                onClick: event => {this.goToMatch(record.MatchId)}, // clicking a row takes the user to a detailed view of the match in the /matches page using the MatchId parameter  
+              };
+            }} dataSource={this.state.matchesResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+            <ColumnGroup title="Teams">
+              <Column title="Home" dataIndex="Home" key="Home" sorter= {(a, b) => a.Home.localeCompare(b.Home)}/>
+              <Column title="Away" dataIndex="Away" key="Away" sorter= {(a, b) => a.Away.localeCompare(b.Away)}/>
+            </ColumnGroup>
+            <ColumnGroup title="Goals">
+              <Column title="Home Goals" dataIndex="HomeGoals" key="HomeGoals" sorter= {(a, b) => a.HomeGoals - b.HomeGoals}/>
+              <Column title="Away Goals" dataIndex="AwayGoals" key="AwayGoals" sorter= {(a, b) => a.AwayGoals - b.AwayGoals}/>
+            </ColumnGroup>
+              <Column title="Date" dataIndex="Date" key="Date"/>
+              <Column title="Time" dataIndex="Time" key="Time"/>
+          </Table>
+
+        </div>
+      </div>
+    )
+  }
 }
 
 export default HomePage
-
