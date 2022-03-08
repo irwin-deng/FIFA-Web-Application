@@ -37,10 +37,10 @@ app.get('/search/players', routes.search_players)
 
 
 
+const port = process.env.PORT || config.server_port
 
-
-app.listen(config.server_port, () => {
-    console.log(`Server running at http://${config.server_host}:${config.server_port}/`);
+app.listen(port, () => {
+    console.log(`Server running at http://${config.server_host}:${port}/`);
 });
 
 module.exports = app;
