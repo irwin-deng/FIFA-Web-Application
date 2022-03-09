@@ -4,7 +4,6 @@ import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress
 
 import {
   Table,
-  Pagination,
   Row,
   Col,
   Divider,

@@ -1,10 +1,8 @@
 import React from 'react';
-import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress } from "shards-react";
+import { Form, FormInput, FormGroup, Button, Card, CardBody, Progress } from "shards-react";
 
 import {
   Table,
-  Pagination,
-  Select,
   Row,
   Col,
   Divider,
@@ -181,7 +179,7 @@ class PlayersPage extends React.Component {
               </Col>
 
               <Col flex={2} style={{ textAlign: 'right' }}>
-                <img src={this.state.selectedPlayerDetails.Photo} referrerpolicy="no-referrer" alt={null} style={{height:'15vh'}}/>
+                <img src={this.state.selectedPlayerDetails.Photo} referrerpolicy="no-referrer" alt="" style={{height:'15vh'}}/>
               </Col>
             </Row>
               <Row gutter='30' align='middle' justify='left'>
@@ -209,7 +207,7 @@ class PlayersPage extends React.Component {
                 </Col>
                 <Col flex={2} style={{ textAlign: 'right' }}>
                 {this.state.selectedPlayerDetails.Nationality}
-                  <img src={this.state.selectedPlayerDetails.Flag} referrerpolicy="no-referrer" alt={null} style={{height:'3vh', marginLeft: '1vw'}}/>
+                  <img src={this.state.selectedPlayerDetails.Flag} referrerpolicy="no-referrer" alt="" style={{height:'3vh', marginLeft: '1vw'}}/>
                 </Col>
 
               </Row>
