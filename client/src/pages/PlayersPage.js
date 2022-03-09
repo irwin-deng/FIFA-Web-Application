@@ -113,6 +113,7 @@ class PlayersPage extends React.Component {
     })
   }
 
+  // Default values
   componentDidMount() {
     getPlayerSearch(this.state.nameQuery, this.state.nationalityQuery, this.state.clubQuery, this.state.ratingHighQuery, this.state.ratingLowQuery, this.state.potHighQuery, this.state.potLowQuery, null, null).then(res => {
       this.setState({ playersResults: res.results })
@@ -226,7 +227,6 @@ class PlayersPage extends React.Component {
                 </Col>
               </Row>
             </CardBody>
-
         </Card>
 
         <Card style={{marginTop: '2vh'}}>

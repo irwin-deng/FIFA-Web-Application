@@ -67,18 +67,19 @@ class HomePage extends React.Component {
     this.goToMatch = this.goToMatch.bind(this)
   }
 
+  // Clicking on a match will take the user to the match page
   goToMatch(matchId) {
     window.location = `/matches?id=${matchId}`
   }
 
+  // When a league is selected in the drop down
   leagueOnChange(value) {
-    // calls getAllMatches in fetcher.js with the parameters page and pageSize set to null
     getAllMatches(null, null, value).then(res => {
       this.setState({ matchesResults: res.results })
     })
-
   }
 
+  // Default values of Matches and Players tables
   componentDidMount() {
     getAllMatches(null, null, 'D1').then(res => {
       this.setState({ matchesResults: res.results })
@@ -88,7 +89,6 @@ class HomePage extends React.Component {
       console.log(res.results)
       this.setState({ playersResults: res.results})
     })
-
   }
 
   render() {
@@ -96,10 +96,13 @@ class HomePage extends React.Component {
     return (
       <div>
         <MenuBar />
+
+        {/* Players table */}
         <div style={{ width: '70vw', margin: '0 auto', marginTop: '5vh' }}>
           <h3>Players</h3>
           <Table dataSource={this.state.playersResults} columns={playerColumns} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}/>
         </div>
+
         <div style={{ width: '70vw', margin: '0 auto', marginTop: '2vh' }}>
           <h3>Matches</h3>
           {/* League selector */}
@@ -111,7 +114,7 @@ class HomePage extends React.Component {
             <Option value="E0">Premier League</Option>
           </Select>
           
-          {/* Table to view match info */}
+          {/* Matches table */}
           <Table onRow={(record, rowIndex) => {
               return {
                 onClick: event => {this.goToMatch(record.MatchId)}, // clicking a row takes the user to a detailed view of the match in the /matches page using the MatchId parameter  

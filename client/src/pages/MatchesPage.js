@@ -52,6 +52,7 @@ class MatchesPage extends React.Component {
       })
     }
 
+    // Default values
     componentDidMount() {
       getMatchSearch(this.state.homeQuery, this.state.awayQuery, null, null).then(res => {
         this.setState({ matchesResults: res.results })
@@ -83,6 +84,7 @@ class MatchesPage extends React.Component {
             </Row>
           </Form>
 
+          { /* Search results table */ }
           <Divider />
           <div style={{ width: '70vw', margin: '0 auto', marginTop: '2vh' }}>
             <h3>Matches</h3>
@@ -104,6 +106,7 @@ class MatchesPage extends React.Component {
             </Table>
           </div>
                 
+          { /* Match details */ }
           <Divider />
           {this.state.selectedMatchDetails ? <div style={{ width: '70vw', margin: '0 auto', marginTop: '2vh' }}>
           <Card>
