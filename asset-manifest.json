@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "./static/js/main.373ec299.chunk.js",
-    "main.js.map": "./static/js/main.373ec299.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.370aeabc.js",
-    "runtime-main.js.map": "./static/js/runtime-main.370aeabc.js.map",
-    "static/css/2.6c08579a.chunk.css": "./static/css/2.6c08579a.chunk.css",
-    "static/js/2.64626e75.chunk.js": "./static/js/2.64626e75.chunk.js",
-    "static/js/2.64626e75.chunk.js.map": "./static/js/2.64626e75.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/2.6c08579a.chunk.css.map": "./static/css/2.6c08579a.chunk.css.map",
-    "static/js/2.64626e75.chunk.js.LICENSE.txt": "./static/js/2.64626e75.chunk.js.LICENSE.txt"
+    "main.js": "/fifa-web-app/static/js/main.373ec299.chunk.js",
+    "main.js.map": "/fifa-web-app/static/js/main.373ec299.chunk.js.map",
+    "runtime-main.js": "/fifa-web-app/static/js/runtime-main.99064349.js",
+    "runtime-main.js.map": "/fifa-web-app/static/js/runtime-main.99064349.js.map",
+    "static/css/2.6c08579a.chunk.css": "/fifa-web-app/static/css/2.6c08579a.chunk.css",
+    "static/js/2.64626e75.chunk.js": "/fifa-web-app/static/js/2.64626e75.chunk.js",
+    "static/js/2.64626e75.chunk.js.map": "/fifa-web-app/static/js/2.64626e75.chunk.js.map",
+    "index.html": "/fifa-web-app/index.html",
+    "static/css/2.6c08579a.chunk.css.map": "/fifa-web-app/static/css/2.6c08579a.chunk.css.map",
+    "static/js/2.64626e75.chunk.js.LICENSE.txt": "/fifa-web-app/static/js/2.64626e75.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.370aeabc.js",
+    "static/js/runtime-main.99064349.js",
     "static/css/2.6c08579a.chunk.css",
     "static/js/2.64626e75.chunk.js",
     "static/js/main.373ec299.chunk.js"
