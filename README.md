@@ -1,3 +1,7 @@
+## Introduction
+
+This web app was created for my CIS 550 (Databases) course. Languages used include mySQL (for querying a database), Node.js (for the backend), and React (for the frontend).
+
 ## File Descriptions
 
 **/datasets**: This directory contains the two datasets used in this app. More info on the datasets can be found [here](./datasets/Dataset%20Information.md). These datasets are uploaded to a server and queried by the server-side app using MySQL.
