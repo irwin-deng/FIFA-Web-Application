@@ -16,7 +16,7 @@
         - __PlayersPage.js__: A page specifically for players. Allows users to search and filter for players and provides a detailed view of the player with visualizations for selected selected.
     - __/components__: Contains files for the top navigation bar, which is reused across all 3 pages.
 
-**/server**: Holds the files for the Node API (<https://fifa-api.irwin-deng.com>)
+**/server**: Holds the files for the [Node API](#Node-API "Goto Node-API")
 - __config.json__: Holds the RDS connection credentials/information and application configuration settings.
 - __package.json__: Maintains the project dependency tree. Defined project properties, scripts, etc.
 - __routes.json__: Contains the implementation of the API routes' handler functions.
