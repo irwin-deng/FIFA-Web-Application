@@ -141,7 +141,7 @@ class PlayersPage extends React.Component {
                     <FormInput placeholder="Nationality" value={this.state.nationalityQuery} onChange={this.handleNationalityQueryChange} />
                 </FormGroup></Col>
                 <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
-                    <label>Nationality</label>
+                    <label>Club</label>
                     <FormInput placeholder="Club" value={this.state.clubQuery} onChange={this.handleClubQueryChange} />
                 </FormGroup></Col>
             </Row>
