@@ -2,6 +2,12 @@
 
 This web app was created for my CIS 550 (Databases) course. Languages used include mySQL (for querying a database), Node.js (for the backend), and React (for the frontend).
 
+<div align="center">
+    <a href="https://github.com/irwin-deng/FIFA-Web-Application"><img src="https://img.shields.io/tokei/lines/github/irwin-deng/FIFA-Web-Application" /></a>
+    <a href="https://github.com/irwin-deng/FIFA-Web-Application"><img src="https://img.shields.io/github/languages/code-size/irwin-deng/FIFA-Web-Application" /></a>
+    <a href="https://github.com/irwin-deng/FIFA-Web-Application/releases"><img src="https://img.shields.io/github/v/release/irwin-deng/FIFA-Web-Application" /></a>
+</div>
+
 ## File Descriptions
 
 **/datasets**: This directory contains the two datasets used in this app. More info on the datasets can be found [here](./datasets/Dataset%20Information.md). These datasets are uploaded to a server and queried by the server-side app using MySQL.
